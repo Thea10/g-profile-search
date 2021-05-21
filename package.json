@@ -1,0 +1,21 @@
+{
+  "name": "y",
+  "version": "1.0.0",
+  "description": "github profile search project",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel index.html --global getProfileModule",
+    "build": "parcel build index.html --global getProfileModule",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "github",
+    "parcel",
+    "javascript"
+  ],
+  "author": "Cynthia Akinade olucynakin@gmail.com",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.5"
+  }
+}
