@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel=" icon" href="images/fallback_img.png" />
+    <link rel="stylesheet" href="css/class-styles.css" />
+    <link rel="stylesheet" href="css/header.css" />
+    <link rel="stylesheet" href="css/profile-info.css" />
+    <link rel="stylesheet" href="css/repo-info.css" />
+
+    <script
+      src="https://kit.fontawesome.com/626775a3aa.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Repositories</title>
+  </head>
+
+  <body onscroll="getProfileModule.appScroll()">
+
+    <section  class="main-body" id="main-body">
+      <header>
+        <nav class="nav nav-mobile">
+          <div class="top-items">
+            <a  onclick="getProfileModule.detailToggle('detail-items')"  href="#" class="toggler">
+              <i class="fas fa-bars"></i>
+            </a>
+
+            <a href="#" class="brand">
+              <i class="fa fa-github"></i>
+            </a>
+
+            <a href="#" class="notify">
+              <i class="fa fa-bell-o"></i>
+            </a>
+          </div>
+          <div class="detail-items" id="detail-items">
+            <ul class="main-tabs">
+              <li>
+                <div class="search-input d-flex align-center">
+                  <input id="searchfield" type="text" oninput="getProfileModule.searchTextChange(event.target.value)" placeholder="Search or jump to..." />
+                  <div class="icon d-flex align-center justify-center">/</div>
+                  <div id="search-input-dropdown" class="search-input-dropdown">  
+                      <button id="search-button"></button> 
+                  </div>
+                </div>
+              </li>
+
+              <li><a href="#">DashBoard</a></li>
+              <li><a href="#">Pull requests</a></li>
+              <li><a href="#">Issues</a></li>
+              <li><a href="#">Marketplace</a></li>
+              <li><a href="#">Explore</a></li>
+            </ul>
+            <ul class="profile-tabs">
+              <li>
+                <a href="#"> <i class="fas fa-bell"></i></a>
+              </li>
+              <li>
+                <a href="#">
+                  <i class="fas fa-plus"></i>
+                  <i class="fa fa-caret-down"></i
+                ></a>
+              </li>
+              <li>
+                <a href="#">
+                  <img onerror="'./images/fallback_img.png'" src="/images/fallback_img.png" alt="avatar"   />
+                  <span>Thea10</span> <i class="fa fa-caret-down"></i
+                ></a>
+              </li>
+              <li>
+                <a href="#"> <i class="fas fa-sign-out"></i> Sign out</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </header>
+
+      <span id="initial-text" class="show"> Hello there, <span class="mobile-text"> click the menu icon to start searching</span> <span class="large-screen-text">type in the search box  above to search for a user</span> </span>
+
+      <section class="loader" id="loading">
+        <img id="loader-img" class="show" src="/images/loader.svg" alt="f" />
+        <span id="error-message"></span>
+      </section>
+
+      <section id="main-content" class="content d-flex">
+        <div class="profile-info">
+          <div class="profile-main d-flex" id="profile-main">
+            <img src="" onerror="'./images/fallback_img.png'" alt="profile" class="avatar" />
+
+            <div class="profile-details">
+              <h5 class="main-name" id="main-name"></h5>
+              <h6 class="name-alias" id="name-alias"></h6>
+            </div>
+          </div>
+          <div class="set-status-holder">
+            <button class="set-status d-flex align-center">
+              <i class="fa fa-smile-o"></i>
+              <span>Set status</span>
+            </button>
+          </div>
+
+          <div class="profile-bio">
+            <div class="role" id="user-bio"></div>
+            <ul class="profile-socials">
+              <li>
+                <i class="fa fa-envelope-o"></i>
+                <a href="#" class="dark-link" id="user-email"> </a>
+              </li>
+
+              <div class="d-flex align-center" style="flex-wrap: wrap">
+                <li>
+                  <i class="fa fa-user-o"></i>
+                  <a href="#" class="light-link">
+                    <span class="number" id="followers"></span> followers</a
+                  >
+                  .
+                </li>
+
+                <li>
+                  <a href="#" class="light-link">
+                    <span class="number" id="following"></span> following</a
+                  >.
+                </li>
+
+                <li>
+                  <a href="#" class="light-link">
+                    <i class="fa fa-star-o"></i>
+                    <span class="number" id="gazers"></span
+                  ></a>
+                </li>
+              </div>
+            </ul>
+          </div>
+        </div>
+        <div class="repository-info">
+          <div class="link-holder d-flex" id="link-holder">
+            <a
+              href="#"
+              class="tab-link profile hide d-flex align-center"
+              id="tab-link-profile"
+            >
+              <img alt="avar" onerror="'./images/fallback_img.png'" src="" width="32" height="32" class="avatar" />
+              <span></span>
+            </a>
+            <div class="tab-links d-flex">
+              <a href="#" class="tab-link d-flex align-center">
+                <svg width="16" height="16" aria-hidden="true">
+                  <path
+                    fill-rule="evenodd"
+                    d="M0 1.75A.75.75 0 01.75 1h4.253c1.227 0 2.317.59 3 1.501A3.744 3.744 0 0111.006 1h4.245a.75.75 0 01.75.75v10.5a.75.75 0 01-.75.75h-4.507a2.25 2.25 0 00-1.591.659l-.622.621a.75.75 0 01-1.06 0l-.622-.621A2.25 2.25 0 005.258 13H.75a.75.75 0 01-.75-.75V1.75zm8.755 3a2.25 2.25 0 012.25-2.25H14.5v9h-3.757c-.71 0-1.4.201-1.992.572l.004-7.322zm-1.504 7.324l.004-5.073-.002-2.253A2.25 2.25 0 005.003 2.5H1.5v9h3.757a3.75 3.75 0 011.994.574z"
+                  ></path>
+                </svg>
+                <span>Overview</span>
+              </a>
+
+              <a href="#" class="tab-link active d-flex align-center">
+                <svg
+                  viewBox="0 0 16 16"
+                  width="16"
+                  height="16"
+                  aria-hidden="true"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M2 2.5A2.5 2.5 0 014.5 0h8.75a.75.75 0 01.75.75v12.5a.75.75 0 01-.75.75h-2.5a.75.75 0 110-1.5h1.75v-2h-8a1 1 0 00-.714 1.7.75.75 0 01-1.072 1.05A2.495 2.495 0 012 11.5v-9zm10.5-1V9h-8c-.356 0-.694.074-1 .208V2.5a1 1 0 011-1h8zM5 12.25v3.25a.25.25 0 00.4.2l1.45-1.087a.25.25 0 01.3 0L8.6 15.7a.25.25 0 00.4-.2v-3.25a.25.25 0 00-.25-.25h-3.5a.25.25 0 00-.25.25z"
+                  ></path>
+                </svg>
+                <span>Repositories</span>
+                <span class="repo-count" id="repo-count"></span>
+              </a>
+
+              <a href="#" class="tab-link d-flex align-center">
+                <svg viewBox="0 0 16 16" width="16" height="16">
+                  <path
+                    fill-rule="evenodd"
+                    d="M1.75 0A1.75 1.75 0 000 1.75v12.5C0 15.216.784 16 1.75 16h12.5A1.75 1.75 0 0016 14.25V1.75A1.75 1.75 0 0014.25 0H1.75zM1.5 1.75a.25.25 0 01.25-.25h12.5a.25.25 0 01.25.25v12.5a.25.25 0 01-.25.25H1.75a.25.25 0 01-.25-.25V1.75zM11.75 3a.75.75 0 00-.75.75v7.5a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75zm-8.25.75a.75.75 0 011.5 0v5.5a.75.75 0 01-1.5 0v-5.5zM8 3a.75.75 0 00-.75.75v3.5a.75.75 0 001.5 0v-3.5A.75.75 0 008 3z"
+                  ></path>
+                </svg>
+                <span>Projects</span>
+              </a>
+              <a href="#" class="tab-link d-flex align-center">
+                <svg width="16" height="16" aria-hidden="true">
+                  <path
+                    fill-rule="evenodd"
+                    d="M8.878.392a1.75 1.75 0 00-1.756 0l-5.25 3.045A1.75 1.75 0 001 4.951v6.098c0 .624.332 1.2.872 1.514l5.25 3.045a1.75 1.75 0 001.756 0l5.25-3.045c.54-.313.872-.89.872-1.514V4.951c0-.624-.332-1.2-.872-1.514L8.878.392zM7.875 1.69a.25.25 0 01.25 0l4.63 2.685L8 7.133 3.245 4.375l4.63-2.685zM2.5 5.677v5.372c0 .09.047.171.125.216l4.625 2.683V8.432L2.5 5.677zm6.25 8.271l4.625-2.683a.25.25 0 00.125-.216V5.677L8.75 8.432v5.516z"
+                  ></path>
+                </svg>
+                <span>Packages</span></a
+              >
+            </div>
+          </div>
+
+          <div class="repository-body">
+            <form class="repository-body-actions">
+              <input type="text" disabled placeholder="Find a repository..." />
+            </form>
+          
+
+            <div class="repository-body-cards" id="repository-body-cards">
+              <div class="repository-body-card d-flex justify-between">
+                <div>
+                  <div class="repo-count bold"></div>
+                  results for
+                  <div class="bold">public</div>
+                  repositories
+                </div>
+                <a href="#" onclick="getProfileModule.clearSearch()">Clear Search</a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </section>
+    </section>
+    <script src="/app.js"></script>
+  </body>
+</html>

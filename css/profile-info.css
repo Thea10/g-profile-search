@@ -1,0 +1,200 @@
+body {
+    color: #24292e;
+  }
+  
+  button {
+    padding: 0.5rem;
+    border-radius: 6px;
+  }
+  
+  section.content {
+    flex-direction: column;
+    padding: 0 1rem;
+  }
+  
+  .profile-info .profile-main {
+    align-items: center;
+    margin-bottom: 1.5rem;
+  }
+  
+  .profile-info .profile-main img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 1px solid #e1e4e8;
+    box-shadow: 0 0 0 1px #00000000;
+  }
+  
+  .profile-info .profile-main .profile-details {
+    margin-left: 1.5rem;
+  }
+  
+  .profile-info .profile-main .profile-details .main-name,
+  .profile-info .profile-main .profile-details .name-alias {
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+  
+  .profile-info .profile-main .profile-details .main-name {
+    font-size: 26px;
+    line-height: 1.25;
+    font-weight: 500;
+  }
+  
+  .profile-info .profile-main .profile-details .name-alias {
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 24px;
+    color: #586069;
+  }
+  
+  .profile-info .set-status-holder {
+    position: relative;
+  }
+  .profile-info button.set-status {
+    background: transparent;
+    border: 1px solid #e1e4e8;
+    color: #586069;
+    width: 100%;
+    font-size: 16px;
+    margin-bottom: 1rem;
+    transition: all 0.5s;
+  }
+  
+  .profile-info button.set-status span {
+    margin-left: 0.5rem;
+    font-size: 12px;
+  }
+  
+  .profile-info button.set-status:hover {
+    color: #0366d6;
+  }
+  
+  .profile-info .profile-bio .role {
+    margin-bottom: 1rem;
+  }
+  
+  .profile-info .profile-bio button.edit-profile {
+    background: #fafbfc;
+    border: 1px solid #1b1f2326;
+    width: 100%;
+    margin-bottom: 1rem;
+    color: #24292e;
+    font-size: 14px;
+  }
+  
+  .profile-info .profile-bio button.edit-profile:hover {
+    background: #edeff2;
+  }
+  
+  .profile-info .profile-bio .profile-socials {
+    margin: 0;
+  }
+  .profile-info .profile-bio .profile-socials li {
+    display: flex;
+    align-items: baseline;
+    margin-bottom: 0.5rem;
+  }
+  
+  .profile-info .profile-bio .profile-socials li:hover * {
+    color: #0366d6 !important ;
+  }
+  
+  .profile-info .profile-bio .profile-socials li a {
+    text-decoration: none;
+    margin-left: 0.5rem;
+    font-size: 14px;
+  }
+  
+  .profile-info .profile-bio .profile-socials li a:hover {
+    text-decoration: underline;
+  }
+  
+  .profile-info .profile-bio .profile-socials li i {
+    color: #6a737d;
+    font-size: 16px;
+  }
+  
+  .profile-info .profile-bio .profile-socials li .dark-link {
+    color: #24292e;
+  }
+  
+  .profile-info .profile-bio .profile-socials li .light-link {
+    color: #586069;
+  }
+  
+  .profile-info .profile-bio .profile-socials li .number {
+    color: #24292e;
+    font-weight: 500;
+  }
+  
+  .optional-info{
+    display: none;
+  }
+  
+  
+  @media only screen and (min-width: 768px) {
+    section.content {
+      flex-direction: row;
+      padding:  2rem;
+    }
+  
+    .profile-info .profile-main {
+      flex-direction: column;
+      align-items: unset;
+    }
+  
+    .profile-info .profile-main img {
+      width: 200px;
+      height: 200px;
+      margin-bottom: 1rem;
+      z-index: 1030;
+    }
+  
+    .profile-info .profile-main .profile-details {
+      margin-left: 0;
+    }
+    .profile-info button.set-status {
+      position: absolute;
+      left: 85%;
+      background-color: white;
+      border: 1px solid #e1e4e8;
+      width: 35px;
+      height: 35px;
+      margin-bottom: 8rem;
+      margin-left: 0;
+      border-radius: 20px;
+      bottom: 0;
+      z-index: 1030;
+    }
+  
+    .profile-info button.set-status:hover {
+      box-shadow: 0 2px 3px #90959a52;
+    }
+  
+    .profile-info button.set-status span {
+      display: none;
+    }
+    .profile-info button.set-status:hover {
+      width: unset;
+    }
+  
+    .profile-info button.set-status:hover span {
+      display: block;
+    }
+  
+    .profile-info .profile-bio .profile-socials {
+      display: flex;
+      flex-direction: column-reverse;
+    }
+  
+  }
+  
+  @media only screen and (min-width: 992px) {
+    .profile-info .profile-main img {
+      width: 270px;
+      height: 270px;
+    }
+  }
+  
